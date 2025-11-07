@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jelee <marvin@42lausanne.ch>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/07 17:44:15 by jelee             #+#    #+#             */
-/*   Updated: 2025/11/07 17:44:18 by jelee            ###   ####lausanne.ch   */
+/*   Created: 2025/11/07 17:47:18 by jelee             #+#    #+#             */
+/*   Updated: 2025/11/07 17:47:22 by jelee            ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int main(void)
+Zombie::Zombie(void) : _name("Unnamed")
 {
-    std::cout << "--- Heap Zombie Test (newZombie)---" << std::endl;
-    Zombie* heapZombie = newZombie("Heap Zombie");
-    heapZombie->announce();
-    delete heapZombie; 
 
-    std::cout << "\n--- Stack Zombie Test (randomChump) ---" << std::endl;
-    randomChump("Stack Zombie");
+}
 
-    std::cout << "\n--- End Test ---" << std::endl;
-    return (0);
+Zombie::Zombie(std::string name) : _name(name)
+{
+
+}
+
+Zombie::~Zombie(void)
+{
+    std::cout << this->_name << ": disappeared" << std::endl;
+}
+
+void    Zombie::announce(void)
+{
+    std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}
+
+void	Zombie::setName(std::string name)
+{
+	this->_name = name;
 }

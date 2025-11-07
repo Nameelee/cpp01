@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jelee <marvin@42lausanne.ch>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/07 17:44:15 by jelee             #+#    #+#             */
-/*   Updated: 2025/11/07 17:44:18 by jelee            ###   ####lausanne.ch   */
+/*   Created: 2025/11/07 17:47:09 by jelee             #+#    #+#             */
+/*   Updated: 2025/11/07 17:47:11 by jelee            ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-int main(void)
+# include <iostream>
+# include <string>
+
+class Zombie
 {
-    std::cout << "--- Heap Zombie Test (newZombie)---" << std::endl;
-    Zombie* heapZombie = newZombie("Heap Zombie");
-    heapZombie->announce();
-    delete heapZombie; 
+    private:
+        std::string _name;
 
-    std::cout << "\n--- Stack Zombie Test (randomChump) ---" << std::endl;
-    randomChump("Stack Zombie");
+    public:
+		Zombie(void);
+        Zombie(std::string name);
+        ~Zombie(void);
 
-    std::cout << "\n--- End Test ---" << std::endl;
-    return (0);
-}
+    void    announce(void);
+	void	setName(std::string name);
+};
+
+Zombie* zombieHorde(int N, std::string name);
+
+#endif
