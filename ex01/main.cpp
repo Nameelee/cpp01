@@ -22,7 +22,7 @@ int main(void)
 	Zombie* myHorde = zombieHorde(N, name);
 	if (!myHorde)
 	{
-		std::cerr << "Failed at allocation memory!" << std::endl;//whatisit
+		std::cerr << "Failed at allocation memory!" << std::endl;//cerr: shows error like cout
 		return (1);
 	}
 
