@@ -1,7 +1,7 @@
 
-NAME		= zombie01
+NAME		= zombie
 
-CXX			= c++
+CXX			= clang++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -I. -g
 
 SRCS		= main.cpp \

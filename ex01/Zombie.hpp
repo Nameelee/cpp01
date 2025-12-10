@@ -19,10 +19,10 @@
 class Zombie
 {
     private:
-        std::string _name;
+        std::string _name;//change name only by setName and setName can do as filter
 
     public:
-		Zombie(void);
+		Zombie(void);//basic generator. we need this to make array of zombies. 
         Zombie(std::string name);
         ~Zombie(void);
 

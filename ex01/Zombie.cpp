@@ -12,7 +12,7 @@
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(void) : _name("Unnamed")
+Zombie::Zombie(void) : _name("Unnamed")//there is 'name' field in Zombie class. temporaly name those as "Unnamed"
 {
 
 }
