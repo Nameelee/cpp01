@@ -1,5 +1,5 @@
 
-NAME		= zombie
+NAME		= horde
 
 CXX			= clang++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -I. -g

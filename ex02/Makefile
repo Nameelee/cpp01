@@ -1,13 +1,10 @@
 
-NAME		= zombie02
+NAME		= refer
 
 CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -I. -g
 
 SRCS		= main.cpp \
-			  Zombie.cpp \
-			  newZombie.cpp \
-			  randomChump.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 
