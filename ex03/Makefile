@@ -1,13 +1,12 @@
 
-NAME		= zombie03
-
+NAME		= violence
 CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -I. -g
 
 SRCS		= main.cpp \
-			  Zombie.cpp \
-			  newZombie.cpp \
-			  randomChump.cpp
+			  HumanA.cpp \
+			  HumanB.cpp \
+			  Weapon.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 
@@ -15,9 +14,6 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
-
-%.o: %.cpp Zombie.hpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)
