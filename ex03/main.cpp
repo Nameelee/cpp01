@@ -1,6 +1,10 @@
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 
+/**
+ * Due to blacket, the first weapon and second weapon are different object with same drawing
+ */
+
 int main()
 {
     {

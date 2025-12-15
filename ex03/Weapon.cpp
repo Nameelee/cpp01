@@ -8,7 +8,7 @@ Weapon::~Weapon()
 {
 }
 
-const std::string& Weapon::getType(void)
+const std::string& Weapon::getType(void) //std::string& (참조자 반환) -> "복사하지 말고 원본을 보여줘"
 {
     return (this->_type);
 }
