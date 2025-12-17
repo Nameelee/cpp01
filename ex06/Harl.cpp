@@ -29,17 +29,24 @@ void Harl::error(void)
 
 void Harl::complain(std::string level)
 {
-    std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+    std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};//If you declare and put value, you don't need to put number in [];
+    int i = 0;
 
-    void (Harl::*pointerFunc[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+    while (i < 4 && levels[i] != level)//Check if the input word is same with levels[i]
+        i++;
 
-    for (int i = 0; i < 4; i++)
+    switch (i) //there should be 'break' after every case but the subject ask not to input 'break'
     {
-        if (levels[i] == level)
-        {
-            (this->*pointerFunc[i])();//this is different from C lang. You declare *poing and call *poing with '*' 
-            return;
-        }
+        case 0:
+            this->debug();
+        case 1:
+            this->info();
+        case 2:
+            this->warning();
+        case 3:
+            this->error();
+            break;
+        default:
+            std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
     }
-    std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 }
